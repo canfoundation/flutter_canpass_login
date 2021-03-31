@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_canpass_login/constants.dart';
 import 'package:flutter_canpass_login/models/can_pass_account.dart';
 import 'package:flutter_canpass_login/webview.dart';
-import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 
