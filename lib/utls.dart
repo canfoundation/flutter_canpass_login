@@ -2,15 +2,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_canpass_login/constants.dart';
 import 'package:flutter_canpass_login/models/can_pass_account.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class Utils {
-  SharedPreferences _prefs;
-
   Future<void> init() async {
-    _prefs = await SharedPreferences.getInstance();
+    await GetStorage.init();
   }
 
   Future<CanPassAccount> getCanPassAccount(String accessToken) async {
@@ -54,11 +52,11 @@ class Utils {
   }
 
   void saveAccessTokenToCache(String accessToken) {
-    _prefs.setString(Constants.canPassAccessTokenRef, accessToken);
+    GetStorage().write(Constants.canPassAccessTokenRef, accessToken);
   }
 
   String getAccessTokenFromCache() {
-    return _prefs.getString(Constants.canPassAccessTokenRef);
+    return GetStorage().read<String>(Constants.canPassAccessTokenRef);
   }
 
   static Utils _instance;

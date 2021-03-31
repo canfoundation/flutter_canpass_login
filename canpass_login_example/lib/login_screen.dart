@@ -42,7 +42,7 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              ElevatedButton(onPressed: _login, child: Text("Login"),),
+              ElevatedButton(onPressed: _login, child: Text("Login with canpass"),),
               SizedBox(height: 10,),
               Text(err, style: TextStyle(color: Colors.red),),
               SizedBox(height: 10,),
