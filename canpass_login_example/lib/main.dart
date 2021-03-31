@@ -1,4 +1,3 @@
-import 'package:canpass_login_example/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_canpass_login/flutter_canpass_login.dart';
 import 'package:canpass_login_example/welcome_screen.dart';
