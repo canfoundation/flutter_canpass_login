@@ -13,7 +13,7 @@ class FlutterCanPassLogin {
   String _secret;
   String _accessToken;
 
-  void init({String identifier, String secret}) async {
+  Future<void> init({String identifier, String secret}) async {
     await Utils.getInstance().init();
     this._identifier = identifier;
     this._secret = secret;
@@ -61,11 +61,11 @@ class FlutterCanPassLogin {
     }
   }
 
-  static FlutterCanPassLogin instance;
+  static FlutterCanPassLogin _instance;
 
   factory FlutterCanPassLogin.getInstance() {
-    instance ??= FlutterCanPassLogin._();
-    return instance;
+    _instance ??= FlutterCanPassLogin._();
+    return _instance;
   }
 
   FlutterCanPassLogin._();
