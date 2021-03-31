@@ -47,3 +47,6 @@ return current account from given token
 
 ##### to get secret key
 go to https://developer.canpass.me/, create an app and then create OAuth2 clients 
+
+##### demo
+https://drive.google.com/file/d/1uNKeNt7GaD1lEt8NUxdwfjXqm716o1yF/view?usp=sharing
