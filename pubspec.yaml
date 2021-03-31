@@ -11,10 +11,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  webview_flutter: ^2.0.2
   oauth2: ^2.0.0
   graphql_flutter: ^4.0.1
   get_storage:
+  flutter_webview_plugin:
 
 dev_dependencies:
   flutter_test:
