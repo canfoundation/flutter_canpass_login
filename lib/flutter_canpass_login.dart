@@ -13,6 +13,12 @@ class FlutterCanPassLogin {
   String _secret;
   String _accessToken;
 
+  /// init this in your main.dart
+  /// ```
+  /// await FlutterCanPassLogin.getInstance().init(
+  //     secret: your_secret,
+  //     identifier: client_id);
+  /// ```
   Future<void> init({String identifier, String secret}) async {
     await Utils.getInstance().init();
     this._identifier = identifier;
@@ -20,6 +26,9 @@ class FlutterCanPassLogin {
     _accessToken = Utils.getInstance().getAccessTokenFromCache();
   }
 
+  /// return the canpass account object
+  ///
+  /// ``` final account = await FlutterCanPassLogin.getInstance().logIn(context); ```
   Future<CanPassAccount> logIn(BuildContext context) async {
     try {
       var grant = oauth2.AuthorizationCodeGrant(
@@ -42,15 +51,23 @@ class FlutterCanPassLogin {
       return null;
     }
   }
-
+  /// clear the accesstoken
+  ///
+  /// ```FlutterCanPassLogin.getInstance().logOut();```
   void logOut() {
     Utils.getInstance().saveAccessTokenToCache('');
   }
 
+  /// return current accesstoken
+  ///
+  /// ```FlutterCanPassLogin.getInstance().getCurrentToken();```
   String getCurrentToken() {
     return _accessToken;
   }
 
+  /// return current account from given token
+  ///
+  /// ```FlutterCanPassLogin.getInstance().getCurrentAccount(accesstoken);```
   Future<CanPassAccount> getCurrentAccount(String accessToken) async {
     try {
       final account = await Utils.getInstance().getCanPassAccount(accessToken);
